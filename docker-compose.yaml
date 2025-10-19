@@ -1,0 +1,15 @@
+services:
+  app:
+    image: "jc21/nginx-proxy-manager:latest"
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    expose:
+      - "80"
+      - "81"
+      - "443"
+    environment:
+      INITIAL_ADMIN_EMAIL: youremail@example.com
+      INITIAL_ADMIN_PASSWORD: yoursecretpassword
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
