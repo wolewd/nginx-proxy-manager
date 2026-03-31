@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     expose:
       - "80"
-      - "81"
+      - "127.0.0.1:81:81"
       - "443"
     environment:
       INITIAL_ADMIN_EMAIL: youremail@example.com
